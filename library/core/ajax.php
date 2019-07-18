@@ -1,20 +1,20 @@
 <?php
 
-namespace q\q_sticky\admin;
+namespace q\device\admin;
 
-use q\q_sticky\core\helper as helper;
-use q\q_sticky\core\core as core;
+use q\device\core\helper as helper;
+use q\device\core\core as core;
 
 // load it up ##
-\q\q_sticky\admin\ajax::run();
+// \q\device\admin\ajax::run();
 
-class ajax extends \q_sticky {
+class ajax extends \q_device {
 
     public static function run()
     {
 
         // ajax callback ##
-        \add_action( 'wp_ajax_q_sticky', array( get_class(), 'callback' ) );
+        \add_action( 'wp_ajax_q_device', array( get_class(), 'callback' ) );
 
     }
 

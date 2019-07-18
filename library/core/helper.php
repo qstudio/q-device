@@ -1,9 +1,9 @@
 <?php
 
 // namespace ##
-namespace q\q_sticky\core;
+namespace q\device\core;
 
-class helper extends \q_sticky {
+class helper extends \q_device {
 
     /**
     * check if a file exists with environmental fallback

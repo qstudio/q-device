@@ -1,13 +1,13 @@
 <?php
 
-namespace q\q_sticky\core;
-use q\q_sticky\core\core as core;
-use q\q_sticky\core\helper as helper;
+namespace q\device\core;
+use q\device\core\core as core;
+use q\device\core\helper as helper;
 
 // load it up ##
-#\q\q_sticky\core\core::run();
+#\q\device\core\core::run();
 
-class core extends \q_sticky {
+class core extends \q_device {
 
     public static function run()
     {
@@ -21,7 +21,7 @@ class core extends \q_sticky {
     {
 
         // get defined post_types via filter ##
-        $post_types = \apply_filters( "q/sticky/post_types", self::$post_types ); // unserialize ( Q_STICKY_POST_TYPE );
+        $post_types = \apply_filters( "q/device/post_types", self::$post_types ); // unserialize ( Q_STICKY_POST_TYPE );
         
         if ( ! is_array ( $post_types ) ) { 
             
@@ -36,7 +36,7 @@ class core extends \q_sticky {
 
             if ( ! \post_type_exists( $post_type )) {
 
-                helper::log( 'Removing post_type: '.$post_type );
+                // helper::log( 'Removing post_type: '.$post_type );
 
                 unset( $post_types[$post_type] );
 

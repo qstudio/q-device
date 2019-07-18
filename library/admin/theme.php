@@ -1,13 +1,14 @@
 <?php
 
-namespace q\q_sticky\admin;
-use q\q_sticky\core\core as core;
-use q\q_sticky\core\helper as helper;
+namespace q\device\admin;
+
+use q\device\core\core as core;
+use q\device\core\helper as helper;
 
 // load it up ##
-\q\q_sticky\admin\theme::run();
+// \q\device\admin\theme::run();
 
-class theme extends \q_sticky {
+class theme extends \q_device {
 
     public static function run()
     {

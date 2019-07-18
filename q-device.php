@@ -25,6 +25,19 @@
  * 
 */
 
+/*
+Allow device to be set via querysting - ?q_device=desktop OR =tablet OR =client:destkop:browser:opera:version:3_4_1
+Declare Q_Device object 
+    -->get()
+        returns --> os, device, client, version --- can be called Q_Device::get( 'device' ) == 'handheld';
+    --> is('mobile')
+    --> is('tablet')
+    --> is('desktop')
+    --> is('handheld') == mobile + tablet
+Merge in browsers plugin
+Use mobile detect or check what is quicker or built into WP
+*/
+
 defined( 'ABSPATH' ) OR exit;
 
 if ( ! class_exists( 'q_device' ) ) {
