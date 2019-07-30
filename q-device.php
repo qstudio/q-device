@@ -43,7 +43,7 @@ defined( 'ABSPATH' ) OR exit;
 if ( ! class_exists( 'q_device' ) ) {
     
     // instatiate plugin via WP plugins_loaded - init is too late for CPT ##
-    add_action( 'plugins_loaded', array ( 'q_device', 'get_instance' ), 5 );
+    add_action( 'plugins_loaded', array ( 'q_device', 'get_instance' ), 0 );
     
     class q_device {
                 
@@ -52,9 +52,8 @@ if ( ! class_exists( 'q_device' ) ) {
 
         // Plugin Settings
         const version = '1.0.0';
-        static $device = ''; // start false ##
+        static $get = false; // start false ##
         static $debug = false;
-        // static $load_count = 0;
         const text_domain = 'q-device'; // for translation ##
 
         // plugin properties ##
@@ -112,10 +111,6 @@ if ( ! class_exists( 'q_device' ) ) {
         public function register_activation_hook() {
 
             #add_option( 'q_device_configured' );
-
-            // flush rewrites ##
-            #global $wp_rewrite;
-            #$wp_rewrite->flush_rules();
 
         }
 
@@ -253,18 +248,23 @@ if ( ! class_exists( 'q_device' ) ) {
 
             }
 
+            // Mobile Detect library ##
+            if ( ! class_exists( 'Mobile_Detect' ) ) { 
+                 
+                require_once self::get_plugin_path( 'library/external/Mobile_Detect.php' );
+
+            }
+
             // methods ##
             require_once self::get_plugin_path( 'library/core/helper.php' );
             require_once self::get_plugin_path( 'library/core/core.php' );
+            require_once self::get_plugin_path( 'library/core/is.php' );
 
             // backend ##
-            // require_once self::get_plugin_path( 'library/admin/ajax.php' );
+            // require_once self::get_plugin_path( 'library/admin/controller.php' );
             
-            // widgets for template ##
-            #require_once self::get_plugin_path( 'library/theme/widget/search.php' );
-
             // frontend ##
-            // require_once self::get_plugin_path( 'library/theme/theme.php' );
+            require_once self::get_plugin_path( 'library/theme/controller.php' );
 
         }
 
