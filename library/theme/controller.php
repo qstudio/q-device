@@ -50,8 +50,9 @@ class controller extends \q_device {
         $identifier = strtolower( \get_bloginfo( 'name' ) );
 
         // add our class ##
-        $classes[] = 'install-'.\sanitize_key( $identifier );
+        $classes[] = 'install-'.str_replace( array( '.', ' '), '-', $identifier ); // 'install-'.\sanitize_key( $identifier );
 
+        // admin bar - probably not needed ##
         if ( \is_admin_bar_showing() ) {
 
             $classes[] = 'wpadminbar';
