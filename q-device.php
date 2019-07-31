@@ -13,7 +13,7 @@
  * Plugin Name:     Q Device
  * Plugin URI:      https://www.qstudio.us
  * Description:     Device detection and body class declarations
- * Version:         1.0.0
+ * Version:         1.0.1
  * Author:          Q Studio
  * Author URI:      https://www.qstudio.us
  * License:         GPL
@@ -27,14 +27,13 @@
 
 /*
 Allow device to be set via querysting - ?q_device=desktop OR =tablet OR =client:destkop:browser:opera:version:3_4_1
-Declare Q_Device object 
-    -->get()
-        returns --> os, device, client, version --- can be called Q_Device::get( 'device' ) == 'handheld';
+Declare q_device object 
+    --> get()
+        returns --> os, device, client, version --- can be called $q_device::handle == 'handheld';
     --> is('mobile')
     --> is('tablet')
     --> is('desktop')
     --> is('handheld') == mobile + tablet
-Merge in browsers plugin
 Use mobile detect or check what is quicker or built into WP
 */
 
@@ -51,7 +50,7 @@ if ( ! class_exists( 'q_device' ) ) {
         private static $instance = null;
 
         // Plugin Settings
-        const version = '1.0.0';
+        const version = '1.0.1';
         static $get = false; // start false ##
         static $debug = false;
         const text_domain = 'q-device'; // for translation ##

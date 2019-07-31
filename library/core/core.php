@@ -6,24 +6,24 @@ use q\device\core\core as core;
 use q\device\core\helper as helper;
 
 // piggyback Q helper ##
-use q\core\helper as q_helper;
+// use q\core\helper as q_helper;
 
 // load it up ##
-// \q\device\core\core::run();
+\q\device\core\core::run();
 
 class core extends \q_device {
 
     public static function run()
     {
 
-        // get it ##
-        // self::get();
+        // set it ##
+        self::set();
 
     }
 
 
     /**
-     * Get all device data, or specific 
+     * Get all device data 
      */
     public static function get( Array $args = null )
     {
@@ -47,14 +47,19 @@ class core extends \q_device {
 
 
     /**
-     * Set the device device header ans suer agent via $_GET request
+     * Set the device device header and user agent via $_GET request
      * 
      * examples: ?q_device=desktop OR =tablet OR ?q_device=client:destkop:browser:opera:version:3_4_1
      */
     public static function set()
     {
 
+        return true;
+
         // @todo ##
+        // only if logged in with x rights...
+        // check for $_GET['q_device']
+
         // Batch methods.
         // $detect->setUserAgent($userAgent);
         // $detect->setHttpHeaders($httpHeaders);
