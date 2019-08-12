@@ -37,6 +37,8 @@ Declare q_device object
 Use mobile detect or check what is quicker or built into WP
 */
 
+use q\device\core\helper as helper;
+
 defined( 'ABSPATH' ) OR exit;
 
 if ( ! class_exists( 'q_device' ) ) {
