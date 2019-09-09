@@ -17,7 +17,7 @@ class core extends \q_device {
     {
 
         // set it ##
-        self::set();
+        // self::set();
 
     }
 
@@ -75,32 +75,38 @@ class core extends \q_device {
     public static function handle( $default = 'handheld' )
     {
 
+        // grab default ## 
+        $string = $default;
+
+        // tablet ##
         if ( is::tablet() ) {
 
-            return 'tablet';
+            // assign ##
+            $string = 'handheld'; // later needs to be tablet ##
 
-        }
+        // } elseif ( is::mobile() ) {
 
-        // if ( is::mobile() ) {
-
-        //     return 'mobile';
+        //     $string = 'mobile';
 
         // }
 
-        if ( is::handheld() ) {
+        } elseif ( is::handheld() ) {
 
-            return 'handheld';
+            // assign ## 
+            $string = 'handheld';
+
+        } elseif ( is::desktop() ) {
+
+            // assign ## 
+            $string = 'desktop';
 
         }
 
-        if ( is::desktop() ) {
+        // filter ##
+        $string = \apply_filters( 'q/device/handle', $string );
 
-            return 'desktop';
-
-        }
-
-        // all else is gravy ##
-        return $default;
+        // return ##
+        return $string;
 
     }
 
