@@ -1,3 +1,7 @@
+### 1.0.3 ###
+
+* Restored tablet support
+
 ### 1.0.2 ###
 
 * Removed tablet support, returns generic handheld handle - @todo, more graceful fix in future.

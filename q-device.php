@@ -13,7 +13,7 @@
  * Plugin Name:     Q Device
  * Plugin URI:      https://www.qstudio.us
  * Description:     Device detection and body class declarations
- * Version:         1.0.2
+ * Version:         1.0.3
  * Author:          Q Studio
  * Author URI:      https://www.qstudio.us
  * License:         GPL
@@ -52,7 +52,7 @@ if ( ! class_exists( 'q_device' ) ) {
         private static $instance = null;
 
         // Plugin Settings
-        const version = '1.0.2';
+        const version = '1.0.3';
         static $get = false; // start false ##
         static $debug = false;
         const text_domain = 'q-device'; // for translation ##

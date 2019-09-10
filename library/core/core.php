@@ -72,7 +72,7 @@ class core extends \q_device {
     /**
      * Get a simple device handle - desktop, tablet, mobile
      */
-    public static function handle( $default = 'handheld' )
+    public static function handle( $default = 'handheld' )  
     {
 
         // grab default ## 
@@ -82,7 +82,7 @@ class core extends \q_device {
         if ( is::tablet() ) {
 
             // assign ##
-            $string = 'handheld'; // later needs to be tablet ##
+            $string = 'tablet';
 
         // } elseif ( is::mobile() ) {
 
