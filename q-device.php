@@ -221,7 +221,7 @@ if ( ! class_exists( 'q_device' ) ) {
                 ! class_exists( 'Q' )
             ) {
 
-                helper::log( 'Q classes are required, install required plugin.' );
+                helper::log( 'e:>Q classes are required, install required plugin.' );
 
                 return false;
 
